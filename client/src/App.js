@@ -1,6 +1,8 @@
+import FormCreateProduct from './FormCreateProduct';
+
 const App = () => (
   <div className="app">
-    <h3>Happy hacking!</h3>
+    <FormCreateProduct />
   </div>
 );
 
