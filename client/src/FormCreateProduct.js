@@ -7,10 +7,17 @@ const FormCreateProduct = () => {
 
     const form = event.target;
 
-    const body = new FormData(form);
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const category = formData.get('category');
+    const price = formData.get('price');
+
     const response = await fetch(ENDPOINT, {
       method: 'POST',
-      body,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, category, price }),
     });
 
     if (response.ok) {
